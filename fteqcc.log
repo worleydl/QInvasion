@@ -1,0 +1,133 @@
+Source file: progs.src
+outputfile: ../progs.dat
+compiling defs.qc
+compiling subs.qc
+in function SetMovedir (line 12),
+subs.qc:25: warning: SetMovedir: not all control paths return a value
+compiling fight.qc
+in function ShamCheckAttack (line 294),
+fight.qc:299: warning: Local "enemy_yaw" defined with name of a global
+compiling ai.qc
+in function FindTarget (line 352),
+ai.qc:368: warning: 'FindTarget' should return float
+in function CheckAnyAttack (line 584),
+ai.qc:588: warning: 'CheckAnyAttack' should return float
+compiling combat.qc
+compiling items.qc
+in function PlaceItem (line 36),
+items.qc:47: warning: droptofloor: Too few parameters
+defs.qc:602:    droptofloor  is defined here
+compiling weapons.qc
+in function SpawnMeatSpray (line 89),
+weapons.qc:92: warning: org duplicate definition ignored
+weapons.qc:90:    org  is defined here
+compiling world.qc
+compiling client.qc
+in function FindIntermission (line 103),
+client.qc:134: warning: FindIntermission: not all control paths return a value
+compiling player.qc
+compiling monsters.qc
+in function walkmonster_start_go (line 69),
+monsters.qc:75: warning: droptofloor: Too few parameters
+defs.qc:602:    droptofloor  is defined here
+compiling doors.qc
+compiling buttons.qc
+compiling triggers.qc
+compiling plats.qc
+compiling misc.qc
+in function misc_fireball (line 171),
+misc.qc:179: warning: Effectless statement
+in function misc_explobox (line 234),
+misc.qc:249: warning: droptofloor: Too few parameters
+defs.qc:602:    droptofloor  is defined here
+in function misc_explobox2 (line 266),
+misc.qc:281: warning: droptofloor: Too few parameters
+defs.qc:602:    droptofloor  is defined here
+in function func_illusionary (line 529),
+misc.qc:536: warning: makestatic: Too few parameters
+defs.qc:650:    makestatic  is defined here
+compiling ogre.qc
+in function ogre_smash12 (line 247),
+ogre.qc:249: warning: ai_charge: Too few parameters
+fight.qc:156:    ai_charge  is defined here
+compiling demon.qc
+compiling shambler.qc
+compiling knight.qc
+at global scope,
+knight.qc:32: warning: Duplicate macro defined (attackb1)
+compiling soldier.qc
+compiling wizard.qc
+in function WizardAttackFinished (line 168),
+wizard.qc:180: warning: WizardAttackFinished: not all control paths return a value
+compiling dog.qc
+compiling zombie.qc
+compiling boss.qc
+compiling tarbaby.qc
+compiling hknight.qc
+compiling fish.qc
+compiling shalrath.qc
+compiling enforcer.qc
+in function LaunchLaser (line 296),
+enforcer.qc:76: warning: vec duplicate definition ignored
+enforcer.qc:75:    vec  is defined here
+compiling oldone.qc
+at global scope,
+oldone.qc:29: warning: Duplicate macro defined (shake12)
+compiling invasion.qc
+Progs should run on any Quake executor
+note: You can use the noref prefix or pragma to silence this message.
+defs.qc:401: warning: empty_float  no references
+fight.qc:298: warning: chance  no references
+fight.qc:299: warning: enemy_yaw  no references
+ai.qc:37: warning: current_yaw  no references
+ai.qc:476: warning: mtemp  no references
+ai.qc:679: warning: delta  no references
+ai.qc:680: warning: axis  no references
+ai.qc:681: warning: direct  no references
+ai.qc:681: warning: ang_rint  no references
+ai.qc:681: warning: ang_floor  no references
+ai.qc:681: warning: ang_ceil  no references
+items.qc:152: warning: amount  no references
+items.qc:871: warning: stemp  no references
+items.qc:872: warning: best  no references
+items.qc:1007: warning: stemp  no references
+items.qc:1008: warning: best  no references
+items.qc:1080: warning: stemp  no references
+items.qc:1081: warning: best  no references
+weapons.qc:91: warning: mpuff  no references
+weapons.qc:376: warning: mpuff  no references
+weapons.qc:551: warning: mpuff  no references
+weapons.qc:630: warning: old  no references
+weapons.qc:646: warning: old  no references
+weapons.qc:677: warning: rand  no references
+weapons.qc:717: warning: rand  no references
+world.qc:362: warning: e  no references
+client.qc:292: warning: pos  no references
+client.qc:694: warning: old_self  no references
+client.qc:729: warning: start  no references
+client.qc:729: warning: end  no references
+client.qc:903: warning: mspeed  no references
+client.qc:903: warning: aspeed  no references
+client.qc:904: warning: r  no references
+client.qc:1115: warning: mspeed  no references
+client.qc:1115: warning: aspeed  no references
+client.qc:1116: warning: r  no references
+monsters.qc:51: warning: ent  no references
+monsters.qc:51: warning: otemp  no references
+monsters.qc:51: warning: stemp  no references
+monsters.qc:71: warning: stemp  no references
+monsters.qc:72: warning: etemp  no references
+buttons.qc:88: warning: gtemp  no references
+buttons.qc:88: warning: ftemp  no references
+triggers.qc:2: warning: stemp  no references
+triggers.qc:2: warning: otemp  no references
+triggers.qc:2: warning: old  no references
+triggers.qc:224: warning: junk  no references
+plats.qc:150: warning: t  no references
+misc.qc:447: warning: vtmp1  no references
+misc.qc:447: warning: modi  no references
+ogre.qc:92: warning: mpuff  no references
+demon.qc:280: warning: vec  no references
+dog.qc:306: warning: vec  no references
+zombie.qc:164: warning: mpuff  no references
+71 warnings
