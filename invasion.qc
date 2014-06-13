@@ -174,64 +174,64 @@ void(entity e) next_wave = {
 void(entity e) wave_spawn = 
 {
 	while(1) {
-		if(e.curr_wave_army && self.last_spawn < 0) {
+		if(e.curr_wave_army && e.last_spawn < 0) {
 			e.curr_wave_army = e.curr_wave_army - 1;
-			self.last_spawn = 0;
+			e.last_spawn = 0;
 			spawn_army(e);
 			break;
-		} else if(e.curr_wave_demon1 && self.last_spawn < 1) {
+		} else if(e.curr_wave_demon1 && e.last_spawn < 1) {
 			e.curr_wave_demon1 = e.curr_wave_demon1 - 1;
-			self.last_spawn = 1;
+			e.last_spawn = 1;
 			spawn_demon1(e);
 			break;
-		} else if(e.curr_wave_dog && self.last_spawn < 2) {
+		} else if(e.curr_wave_dog && e.last_spawn < 2) {
 			e.curr_wave_dog = e.curr_wave_dog - 1;
-			self.last_spawn = 2;
+			e.last_spawn = 2;
 			spawn_dog(e);
 			break;
-		} else if(e.curr_wave_enforcer && self.last_spawn < 3) {
+		} else if(e.curr_wave_enforcer && e.last_spawn < 3) {
 			e.curr_wave_enforcer = e.curr_wave_enforcer - 1;
-			self.last_spawn = 3;
+			e.last_spawn = 3;
 			spawn_enforcer(e);
 			break;
-		} else if(e.curr_wave_fish && self.last_spawn < 4) {
+		} else if(e.curr_wave_fish && e.last_spawn < 4) {
 			e.curr_wave_fish = e.curr_wave_fish - 1;
-			self.last_spawn = 4;
+			e.last_spawn = 4;
 			spawn_fish(e);
 			break;
-		} else if(e.curr_wave_knight && self.last_spawn < 5) {
+		} else if(e.curr_wave_knight && e.last_spawn < 5) {
 			e.curr_wave_knight = e.curr_wave_knight - 1;
-			self.last_spawn = 5;
+			e.last_spawn = 5;
 			spawn_knight(e);
 			break;
-		} else if(e.curr_wave_hknight && self.last_spawn < 6) {
+		} else if(e.curr_wave_hknight && e.last_spawn < 6) {
 			e.curr_wave_hknight = e.curr_wave_hknight - 1;
-			self.last_spawn = 6;
+			e.last_spawn = 6;
 			spawn_hknight(e);
 			break;
-		} else if(e.curr_wave_ogre && self.last_spawn < 7) {
+		} else if(e.curr_wave_ogre && e.last_spawn < 7) {
 			e.curr_wave_ogre = e.curr_wave_ogre - 1;
-			self.last_spawn = 7;
+			e.last_spawn = 7;
 			spawn_ogre(e);
 			break;
-		} else if(e.curr_wave_shalrath && self.last_spawn < 8) {
+		} else if(e.curr_wave_shalrath && e.last_spawn < 8) {
 			e.curr_wave_shalrath = e.curr_wave_shalrath - 1;
-			self.last_spawn = 8;
+			e.last_spawn = 8;
 			spawn_shalrath(e);
 			break;
-		} else if(e.curr_wave_shambler && self.last_spawn < 9) {
+		} else if(e.curr_wave_shambler && e.last_spawn < 9) {
 			e.curr_wave_shambler = e.curr_wave_shambler - 1;
-			self.last_spawn = 9;
+			e.last_spawn = 9;
 			spawn_shambler(e);
 			break;
-		} else if(e.curr_wave_tarbaby && self.last_spawn < 10) {
+		} else if(e.curr_wave_tarbaby && e.last_spawn < 10) {
 			e.curr_wave_tarbaby = e.curr_wave_tarbaby - 1;
-			self.last_spawn = 10;
+			e.last_spawn = 10;
 			spawn_tarbaby(e);
 			break;
-		} else if(e.curr_wave_wizard && self.last_spawn < 11) {
+		} else if(e.curr_wave_wizard && e.last_spawn < 11) {
 			e.curr_wave_wizard = e.curr_wave_wizard - 1;
-			self.last_spawn = 11;
+			e.last_spawn = 11;
 			spawn_wizard(e);
 			break;
 		} else if(e.curr_wave_zombie && e.last_spawn < 12) {
