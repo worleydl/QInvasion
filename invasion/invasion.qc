@@ -92,26 +92,26 @@ void(entity e) spawn_zombie;
 */
 void() inv_controller_think = {
 	local entity e;
-	local float all_complete;
+	local float spawners_complete;
 	
-	all_complete = 1;
+	spawners_complete = 1;
 	for(e = world; (e = find(e, classname, "inv_spawn")); ) { 
 		// Self at this point is the inv_controller, e is an inv_spawn entity
 		wave_spawn(e);
 
 		if not (e.complete) {
-			all_complete = 0;
+			spawners_complete = 0;
 		}
 	}
 
 	// Wave progression/completion
-	if(all_complete) {
+	if(spawners_complete && (total_monsters - killed_monsters == 0)) {
 		if(self.curr_wave + 1 < self.wave_limit ) {
 			// Next Wave
 			for(e = world; (e = find(e, classname, "inv_spawn")); ) { 
 				next_wave(e);
 			}
-			//self.curr_wave++;
+			bprint("Wave complete!\n");
 		} else {
 			// Next map
 		}
