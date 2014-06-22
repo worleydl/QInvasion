@@ -13,6 +13,8 @@
 entity		self;
 entity		other;
 entity		world;
+entity		last_inv_target;	// Track last player the invasion targetting chose
+
 float		time;
 float		frametime;
 

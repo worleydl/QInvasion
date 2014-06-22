@@ -1,1 +1,1 @@
-../qcc/fteqcc.bin
+../../qcc/fteqcc.bin

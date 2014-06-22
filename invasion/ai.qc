@@ -352,7 +352,7 @@ slower noticing monsters.
 float() FindTarget =
 {
 	local entity	client;
-	local float		r;
+	local entity	e; // Used in invasion targetting
 
 // if the first spawnflag bit is set, the monster will only wake up on
 // really seeing the player, not another monster getting angry
@@ -366,11 +366,19 @@ float() FindTarget =
 		if (client.enemy == self.enemy)
 			return;
 	}
-	else
-	{
-		client = checkclient ();
-		if (!client)
-			return FALSE;	// current check entity isn't in PVS
+
+	// Invasion mod targetting, rotate around players.  
+	for(e = world; (e = find(e, classname, "player")); ) { 
+		if(e != last_inv_target) {
+			last_inv_target = e;
+			client = e;
+			break;
+		}
+	}
+
+	// If client is still null, try one last attempt for a single player
+	if(!client) {
+		client = find(world, classname, "player");	
 	}
 
 	if (client == self.enemy)
@@ -381,24 +389,6 @@ float() FindTarget =
 	if (client.items & IT_INVISIBILITY)
 		return FALSE;
 
-	r = range (client);
-	if (r == RANGE_FAR)
-		return FALSE;
-		
-	if (!visible (client))
-		return FALSE;
-
-	if (r == RANGE_NEAR)
-	{
-		if (client.show_hostile < time && !infront (client))
-			return FALSE;
-	}
-	else if (r == RANGE_MID)
-	{
-		if ( /* client.show_hostile < time || */ !infront (client))
-			return FALSE;
-	}
-	
 //
 // got one
 //
