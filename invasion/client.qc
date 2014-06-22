@@ -147,7 +147,7 @@ void() GotoNextMap =
 void() ExitIntermission =
 {
 // skip any text in deathmatch
-	if (deathmatch)
+	if (deathmatch || coop)
 	{
 		GotoNextMap ();
 		return;

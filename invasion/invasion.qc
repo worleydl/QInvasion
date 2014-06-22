@@ -111,9 +111,13 @@ void() inv_controller_think = {
 			for(e = world; (e = find(e, classname, "inv_spawn")); ) { 
 				next_wave(e);
 			}
+			self.curr_wave++;
 			bprint("Wave complete!\n");
 		} else {
-			// Next map
+			// TODO: Figure out best mapcycle handling, would prefer to read from maplist.txt
+			// Dummy repeat of single map for now
+			nextmap = mapname;
+			GotoNextMap();
 		}
 	}
 
