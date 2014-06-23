@@ -353,6 +353,7 @@ float() FindTarget =
 {
 	local entity	client;
 	local entity	e; // Used in invasion targetting
+	local float		matched_last;
 
 // if the first spawnflag bit is set, the monster will only wake up on
 // really seeing the player, not another monster getting angry
@@ -365,20 +366,27 @@ float() FindTarget =
 		client = sight_entity;
 		if (client.enemy == self.enemy)
 			return;
-	}
-
-	// Invasion mod targetting, rotate around players.  
-	for(e = world; (e = find(e, classname, "player")); ) { 
-		if(e != last_inv_target) {
-			last_inv_target = e;
-			client = e;
-			break;
+	} else {
+		// Invasion mod targetting, rotate around players.  
+		matched_last = 0;
+		for(e = world; (e = find(e, classname, "player")); ) { 
+			if(e != last_inv_target) {
+				if(e.health > 0) {
+					last_inv_target = e;
+					client = e;
+					break;
+				}
+			} else {
+				matched_last = 1;
+			}
 		}
-	}
 
-	// If client is still null, try one last attempt for a single player
-	if(!client) {
-		client = find(world, classname, "player");	
+		// If client is null, check matched_last
+		if(!client && matched_last && last_inv_target.health > 0) {
+			client = last_inv_target;
+		} else {
+			return FALSE;
+		}	
 	}
 
 	if (client == self.enemy)
