@@ -92,8 +92,23 @@ void(entity e) spawn_zombie;
 */
 void() inv_controller_think = {
 	local entity e;
-	local float spawners_complete;
-	
+	local float pause_inv, spawners_complete;
+
+	pause_inv = 1;
+	// Pause logic when no alive players available
+	for(e = world; (e = find(e, classname, "player")); ) { 
+		if(e.health > 0) {
+			pause_inv = 0;
+			break;
+		}
+	};
+
+	// If pause_inv, come back in 1 second
+	if(pause_inv) {
+		self.nextthink = time + 1;
+		return;
+	}
+
 	spawners_complete = 1;
 	for(e = world; (e = find(e, classname, "inv_spawn")); ) { 
 		// Self at this point is the inv_controller, e is an inv_spawn entity
