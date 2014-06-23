@@ -368,6 +368,13 @@ float() FindTarget =
 			return;
 	} else {
 		// Invasion mod targetting, rotate around players.  
+
+		// If already targeting a player, we're good
+		if(self.enemy && self.enemy.classname == "player" && self.enemy.health > 0) {
+			return FALSE;
+		}
+
+		// Otherwise, look for an alive player
 		matched_last = 0;
 		for(e = world; (e = find(e, classname, "player")); ) { 
 			if(e != last_inv_target) {
@@ -382,10 +389,12 @@ float() FindTarget =
 		}
 
 		// If client is null, check matched_last
-		if(!client && matched_last && last_inv_target.health > 0) {
-			client = last_inv_target;
-		} else {
-			return FALSE;
+		if(!client) {
+			if( matched_last && last_inv_target.health > 0) {
+				client = last_inv_target;
+			} else {
+				return FALSE;
+			}
 		}	
 	}
 
